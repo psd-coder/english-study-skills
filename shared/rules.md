@@ -10,11 +10,11 @@ A run does the one step that is due and ends there, with the next-step line. Gra
 
 The last line of every message that waits for the learner tells them the explicit call that continues their study. A new chat starts with no memory, so the learner calls the skill by name and the skill reads the study folder. Use the form for the app you run in:
 
-- Claude Code, or the Code tab of Claude Desktop: `/english-today`
-- Codex: `$english-today`
-- Any other app: "Use the english-today skill"
+- Claude Code, or the Code tab of Claude Desktop: `/english-study:today`
+- Codex: `$english-study:today`
+- Any other app: "Use the english-study:today skill"
 
-Examples: "When you are ready, send `/english-today` with your answers, in this chat or a new one." "Send `/english-today` for the next lesson."
+Examples: "When you are ready, send `/english-study:today` with your answers, in this chat or a new one." "Send `/english-study:today` for the next lesson."
 
 ## The chat holds the lesson
 
@@ -46,9 +46,9 @@ The state field `unanswered_runs` counts scheduled runs that found open homework
 
 - 1 or 2: a short, warm reminder that repeats the open homework with its rules recap.
 - 3: one message that says the study is paused and that the next-step call brings it back. Set `paused=yes`.
-- While `paused=yes`, a scheduled run ends with the single line "English study is paused. Send `/english-today` when you are ready." (the call for your app).
-- When the learner comes back (the call, an answer, or "resume"): set `paused=no` and `unanswered_runs=0`, and run the re-entry step from `english-today`. Missed lessons are dropped, so the learner never faces a backlog. Homework older than 7 days closes on its own.
+- While `paused=yes`, a scheduled run ends with the single line "English study is paused. Send `/english-study:today` when you are ready." (the call for your app).
+- When the learner comes back (the call, an answer, or "resume"): set `paused=no` and `unanswered_runs=0`, and run the re-entry step from `today`. Missed lessons are dropped, so the learner never faces a backlog. Homework older than 7 days closes on its own.
 
 ## Level claims
 
-The level changes only through `english-assessment` (placement or checkpoint). Report CEFR per skill. IELTS and TOEFL appear only as estimates and are labelled "estimate". Good homework scores are progress inside a level, and you describe them that way.
+The level changes only through `assessment` (placement or checkpoint). Report CEFR per skill. IELTS and TOEFL appear only as estimates and are labelled "estimate". Good homework scores are progress inside a level, and you describe them that way.

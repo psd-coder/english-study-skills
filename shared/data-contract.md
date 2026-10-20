@@ -1,18 +1,18 @@
 # Study folder and study.py
 
-All learner data lives in one study folder. The default is `~/.english-study`; setup may move it. Every skill reaches it through `study.py`, which sits next to this file in the skill's `shared/` folder.
+All learner data lives in one study folder. The default is `~/.english-study`; setup may move it. Every skill reaches it through `study.py`, which sits next to this file in the plugin's `shared/` folder. That folder is two levels up from each skill's folder. Paths in the skill files, such as `references/setup.md` or `../../shared/rules.md`, are relative to the skill's own folder.
 
 In the skills, `study` is this shell function. Define it at the start of every shell command that calls it, with the real path of this skill's folder:
 
 ```
-study() { python3 "<this skill's folder>/shared/study.py" "$@"; }
+study() { python3 "<this skill's folder>/../../shared/study.py" "$@"; }
 ```
 
 If Python is missing, read and write the files directly by the same rules, and do the date math carefully by hand.
 
 ## Start of every run
 
-Run `study status`. It returns the folder path, all settings, the state fields, due review counts, the plan week, whether a checkpoint is due, the last session and the streak. Read it before you say anything to the learner. If it reports `"initialized": false`, the learner has no study folder: hand off to `english-assessment`.
+Run `study status`. It returns the folder path, all settings, the state fields, due review counts, the plan week, whether a checkpoint is due, the last session and the streak. Read it before you say anything to the learner. If it reports `"initialized": false`, the learner has no study folder: hand off to `assessment`.
 
 ## Files
 
@@ -20,7 +20,7 @@ Run `study status`. It returns the folder path, all settings, the state fields, 
 |---|---|---|
 | `profile.md` | `study set`, `study note`, or the learner by hand | `## Settings` (one `key: value` per line), `## Preferences` (free text rules from the learner), `## Notes` |
 | `state.md` | `study state` | `## Fields`: `rev`, `updated`, `next_step`, `open_homework`, `homework_date`, `unanswered_runs`, `paused`, `assessment_progress`, `week_planned` |
-| `plan.md` | english-planner | roadmap, current block, `## This week` |
+| `plan.md` | planner | roadmap, current block, `## This week` |
 | `homework/<date>-<slug>.md` | the skill that sets homework | the rules recap, the items, and a `## Key` section |
 | `cards.jsonl` | `study card-add`, `study card-grade` | review cards for chunks (`vocab`) and grammar topics (`grammar`) |
 | `sessions.jsonl` | `study log session` | one row per finished step |
@@ -34,7 +34,7 @@ Write the markdown files through `study set` and `study state` when a command ex
 
 State fields:
 
-- `next_step`: a short hint for humans (`assessment`, `plan`, `lesson`, `grade`). `english-today` decides from all fields, not from this one alone.
+- `next_step`: a short hint for humans (`assessment`, `plan`, `lesson`, `grade`). `today` decides from all fields, not from this one alone.
 - `open_homework`: `none`, or `<skill>:<detail>`, for example `grammar:homework/2026-10-12-articles-2.md` or `practice:mission:<text>`.
 - `homework_date`: the date the open homework was set, or `none`.
 - `unanswered_runs`, `paused`: see "Missed days" in `rules.md`.

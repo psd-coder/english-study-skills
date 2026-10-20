@@ -1,0 +1,10 @@
+{
+  "name": "english-study",
+  "displayName": "English Study",
+  "version": "0.1.0",
+  "description": "A personal English program: placement test, weekly plan, daily lessons with homework, spaced review, real listening, writing and speaking feedback, and a progress page.",
+  "author": { "name": "Pavel Grinchenko" },
+  "repository": "https://github.com/psdcoder/english-study-skills",
+  "license": "MIT",
+  "keywords": ["english", "language-learning", "study-plan"]
+}

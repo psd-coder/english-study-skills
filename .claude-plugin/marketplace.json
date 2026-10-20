@@ -1,0 +1,14 @@
+{
+  "name": "english-study-skills",
+  "description": "English study skills",
+  "owner": { "name": "Pavel Grinchenko" },
+  "plugins": [
+    {
+      "name": "english-study",
+      "source": "./",
+      "description": "A personal English program with daily lessons, homework and spaced review.",
+      "category": "Education",
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" }
+    }
+  ]
+}

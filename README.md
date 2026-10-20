@@ -1,40 +1,38 @@
 # English study skills
 
-Eight agent skills that run a personal English program: a placement test, a weekly plan, daily lessons with homework, spaced review, real listening material, writing and speaking feedback, and a progress page. They follow the open Agent Skills format, so they work in Claude Desktop, Claude Code, Codex and other agents that can read files and run commands. All learner data stays in a local folder.
+A plugin with eight agent skills that run a personal English program: a placement test, a weekly plan, daily lessons with homework, spaced review, real listening material, writing and speaking feedback, and a progress page. It works in Claude Code, Claude Desktop and Codex. All learner data stays in a local folder.
 
 The method and the reasons behind it are in [docs/process.md](docs/process.md).
 
 ## Install
 
-With the GitHub CLI (2.9x or newer):
+The skills install together as one plugin, `english-study`. They share one `study.py` helper and one set of reference files.
+
+In Claude Code:
 
 ```sh
-gh skill install psdcoder/english-study-skills --all --scope user --agent claude-code
+claude plugin marketplace add psdcoder/english-study-skills
+claude plugin install english-study@english-study-skills
 ```
 
-Use `--agent codex` for Codex. Run `gh skill install --help` to see the other agents.
+In the Code tab of Claude Desktop, open **+**, then **Add plugins**, add the marketplace `psdcoder/english-study-skills` and install `english-study`.
 
-With the `skills` CLI:
+In Codex:
 
 ```sh
-npx skills add psdcoder/english-study-skills
+codex plugin marketplace add psdcoder/english-study-skills
+codex plugin add english-study@english-study-skills
 ```
-
-With curl, into `~/.claude/skills` (use `codex`, `agents` or a folder path instead of `claude`):
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/psdcoder/english-study-skills/main/scripts/install.sh | sh -s -- claude
-```
-
-For Claude Desktop, download `english-study-skills.zip` from the latest release, unzip it, and upload each `english-*.zip` in Settings, Capabilities, Skills.
 
 The skills need Python 3.8 or newer for `study.py`. macOS and most Linux systems already have it.
 
 ## Start
 
-Open a chat in your agent and say "I want to study English with a plan". Setup takes 3 minutes and the placement test about 20. Then the agent builds your program and offers to set up a daily schedule.
+Every skill is called by its full name, with the plugin name in front. In Claude Code and the Code tab of Claude Desktop, a call starts with `/`. In Codex, it starts with `$`.
 
-After that, start each lesson with an explicit call to the `english-today` skill, or let the schedule start the lessons. In Claude Code and the Code tab of Claude Desktop, send `/english-today`. In Codex, send `$english-today`. In other apps, write "Use the english-today skill". Send your homework answers the same way, after the call, in the same chat or a new one. The skill reads your study folder, so a new chat knows where you stopped. Other useful phrases:
+To begin, send `/english-study:assessment` in Claude Code or `$english-study:assessment` in Codex. Setup takes 3 minutes and the placement test about 20. Then the agent builds your program and offers to set up a daily schedule.
+
+After that, start each lesson with `/english-study:today`, or let the schedule start the lessons. Send your homework answers after the same call, in the same chat or a new one. The skill reads your study folder, so a new chat knows where you stopped. Other useful phrases:
 
 - "add 'reckon' to my words"
 - "show my progress"
@@ -45,14 +43,14 @@ After that, start each lesson with an explicit call to the `english-today` skill
 
 | Skill | What it does |
 |---|---|
-| `english-assessment` | setup, placement test, 6-week checkpoint, level confirmation |
-| `english-planner` | program, weekly plan, schedule setup |
-| `english-today` | the daily entry point: picks the step that is due |
-| `english-grammar` | grammar lessons, homework, grading |
-| `english-vocab` | words and chunks with spaced review |
-| `english-practice` | listening, reading, writing, speaking, fluency |
-| `english-progress` | progress report and dashboard |
-| `english-errors` | imports errors from other tools (advanced) |
+| `assessment` | setup, placement test, 6-week checkpoint, level confirmation |
+| `planner` | program, weekly plan, schedule setup |
+| `today` | the daily entry point: picks the step that is due |
+| `grammar` | grammar lessons, homework, grading |
+| `vocab` | words and chunks with spaced review |
+| `practice` | listening, reading, writing, speaking, fluency |
+| `progress` | progress report and dashboard |
+| `errors` | imports errors from other tools (advanced) |
 
 ## Speaking practice
 
@@ -65,21 +63,24 @@ Speaking feedback needs [Handy](https://handy.computer), a free dictation app. I
 | Claude Desktop, Code tab | yes | runs locally while the app is open |
 | Claude Cowork | yes | runs in the cloud; reaches the study folder only while the app is open |
 | Codex app | yes | runs locally while the app is open |
-| Claude Code, Codex CLI | with cron | see `skills/english-planner/references/scheduling.md` |
+| Claude Code, Codex CLI | with cron | see `skills/planner/references/scheduling.md` |
 | Claude Code `/schedule` | no | runs in the cloud without your files |
 
 ## Development
 
-`shared/` is the single source for `study.py` and the shared reference files. Each skill installs on its own, so each one carries a copy in its `shared/` folder. After you change anything in `shared/`, run:
+The repository root is the plugin. `.claude-plugin/plugin.json` is the Claude Code manifest, `plugin.json` is the Codex manifest, and `.claude-plugin/marketplace.json` lists the plugin for both apps. Skills live in `skills/<name>/SKILL.md` and reach the shared files at `../../shared/`. After you change `shared/study.py`, run:
 
 ```sh
 python3 -m unittest discover -s shared
-scripts/sync-shared.sh
+claude plugin validate .
 ```
 
-`gh skill publish --dry-run` checks the skills against the Agent Skills specification. To release, run `gh skill publish --tag <version>`, then `scripts/package.sh` and `gh release upload <version> dist/*.zip`, so the Claude Desktop zips are on the release page.
+To try a local change, add the repository folder as a marketplace: `claude plugin marketplace add ./` or `codex plugin marketplace add ./`, then install `english-study@english-study-skills`. To release, raise `version` in both manifests and push. `scripts/package.sh` builds `dist/english-study.zip` for apps that take a plugin as a zip file.
 
-Still to verify: whether a scheduled task that an agent creates by writing a file in `~/.claude/scheduled-tasks/` shows up in Claude Desktop. Until then, the planner always prints the setup steps.
+Still to verify:
+
+- whether the Chat tab and Cowork in Claude Desktop can install the plugin and run `study.py` against the local study folder;
+- whether a scheduled task that an agent writes to `~/.claude/scheduled-tasks/` shows up in Claude Desktop. Until then, the planner always prints the setup steps.
 
 ## License
 
