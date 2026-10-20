@@ -26,6 +26,8 @@ In a scheduled run the learner is away. Every part of a lesson that needs an ans
 
 For each mistake give the correct form, the reason in one plain sentence, and the pattern to remember. Name what the learner did well, with a quoted example. Log every checked piece of free text as a sample (see `data-contract.md`).
 
+Every quote you present as the learner's own words comes from `samples.jsonl`, `assessments.jsonl`, a homework answer or this chat. An example from the L1 file is a typical error: present it as a common mistake for speakers of the learner's first language.
+
 Explain in simple English one level below the learner's level. Add a one-line gloss in the learner's first language only for a contrast English cannot make clear, or when the learner asks.
 
 ## Missed days

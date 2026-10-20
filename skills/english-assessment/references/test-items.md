@@ -11,7 +11,9 @@ The test looks for the learner's ceiling: the level where errors become regular.
 
 ## 1. Grammar and vocabulary (about 8 minutes, 8 to 12 items)
 
-Alternate grammar and vocabulary items, and track two ceilings: one for grammar and one for vocabulary. Each gets its own level. Use gap-fill, error correction and transformation.
+Alternate grammar and vocabulary items, and track two ceilings: one for grammar and one for vocabulary. Each gets its own level. Use gap-fill, error correction and transformation. Every item is a sentence task the learner can do without grammar terms: a gap to fill, a mistake to correct, a sentence to transform.
+
+When the learner does not understand an item, give the same item again in other words, with one solved example. A clarification carries no new item.
 
 **A1**: "She ___ (be) a teacher and she ___ (live) in Madrid." / Correct: "He don't likes coffee." / Opposite of *cheap*? / "a ___ of milk: bottle, piece, slice".
 
@@ -21,7 +23,7 @@ Alternate grammar and vocabulary items, and track two ceilings: one for grammar 
 
 **B2**: "By the time we arrived, the film ___ (already, start)." / "People say he is very rich." -> "He ___ to be very rich." / "If I ___ (study) harder last year, I ___ (pass)." / Correct: "I look forward to meet you." / Make formal: "I wanna ask about the job." / *heavy rain, strong rain or big rain*?
 
-**C1**: "I had never seen anything like it." -> "Never ___." / Rewrite to stress the cause: "We lost because of poor planning." / "If I ___ (be) more careful, I ___ (not be) in this mess now." / Difference between *consequence* and *repercussion*? / Noun, adjective and adverb of *strength*? / "a ___ distinction, a ___ argument".
+**C1**: "I had never seen anything like it." -> "Never ___." / Rewrite to stress the cause: "We lost because of poor planning." / "If I ___ (be) more careful, I ___ (not be) in this mess now." / Difference between *consequence* and *repercussion*? / Word family of *strong*, as gaps: "Her biggest ___ is patience." (strength) and "We need to ___ the security of the app." (strengthen) / "a ___ distinction, a ___ argument".
 
 ## 2. Reading (about 4 minutes)
 
@@ -45,18 +47,18 @@ Real recordings only (see `shared/sources.md`). Pick an episode at the current e
 
 1. Fetch the page with curl and read the transcript. Choose a 1 to 2 minute stretch. Transcripts have no timestamps, so count about 130 words per minute: for BBC, the first 250 words of the transcript are about the first two minutes.
 2. Give the learner the link and say exactly what to listen to ("the first 2 minutes", "the whole clip"). Ask them to keep the transcript closed and to count how many times they play it.
-3. Ask three questions from that stretch: the main idea, one detail, and one thing the speaker implies or feels.
+3. Ask three questions from that stretch: the main point the speakers make in it, one detail, and one thing the speaker implies or feels. The episode title must not answer the main-point question: ask what the speakers say about the topic, not what the topic is.
 4. Log the episode with `study log episode`.
 
 Scoring: the level is the highest level where the learner got the main idea and the detail. If they needed 3 or more plays, use the level below. If no episode can be fetched, mark listening as "not assessed" and plan a listening task in week 1 to measure it.
 
 ## 4. Production (about 5 minutes)
 
-One written answer and one spoken answer, at the tier that matches the estimate (one tier up if the estimate is B2 or higher).
+One written answer and one spoken answer, at the tier that matches the estimate (one tier up if the estimate is B2 or higher). If a reading text or listening episode in this test touched the tier's topic, write a prompt of the same tier on another topic. Before the prompt, tell the learner: "Answer from your head. Do not look back at the texts from the test or copy words from them. I need your own English."
 
 - Tier 1 (A2): "Tell me about a normal day for you, from morning to evening."
 - Tier 2 (B1): "Tell me about the last trip you took. What happened?"
-- Tier 3 (B2): "Some people think working from home is better than working in an office. What do you think, and why?"
+- Tier 3 (B2): "Some people think it is better to work for a big company than for a small one. What do you think, and why?"
 - Tier 4 (C1): "If you could change one thing about how English is taught, what would it be, and what difference would it make?"
 
 Written: ask for 60 to 120 words, typed without a translator.

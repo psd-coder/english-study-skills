@@ -56,7 +56,7 @@ Your level: B1 (IELTS estimate 5.0, TOEFL estimate 38-46)
 - Reading: B2. You followed the argument and the hidden meaning.
 - Listening: B1. You got the main idea and the details of the B1 clip; the B2 clip needed three plays.
 - Writing: B1. Clear and connected, mostly short sentences.
-- Speaking: B1. You kept talking; articles dropped often ("I have meeting").
+- Speaking: B1. You kept talking; articles dropped often ("<quoted error from the learner's answer>").
 
 Your strength: you understand more than you produce, so we have a lot to build on.
 Your main focus: articles and longer sentences when you speak.

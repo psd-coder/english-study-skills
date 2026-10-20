@@ -28,7 +28,7 @@ Every chunk is one card: `study card-add --kind vocab --front "<chunk>" --data '
 - `forms`: the word family (decide, decision, decisive, decisively).
 - `register`: neutral, informal, formal or slang.
 - `trap`: a false friend or a common misuse, if there is one.
-- `source`: request, session, mistake, listening or reading.
+- `source`: request, session, mistake, listening, reading or assessment.
 - `pron`: the Cambridge Dictionary URL (`shared/sources.md`).
 
 The front is the chunk the learner should produce, not a lone word, whenever the word has a typical partner.

@@ -29,9 +29,10 @@ Follow `references/setup.md`. It ends when `study status` shows the folder with 
 3. After each section, save the result: `study state assessment_progress=<section>:<level>,... --expect <rev>`. When the learner returns, continue from the next section.
 4. Score with `references/scoring.md`. Every sub-skill gets a CEFR level backed by quoted evidence.
 5. Save:
-   - `study log assessment '{"kind":"placement","levels":{...},"overall":"B1","ielts_estimate":"5.0","toefl_estimate":"38-46","evidence":"...","focus":"..."}'`
+   - `study log assessment '{"kind":"placement","levels":{...},"overall":"B1","ielts_estimate":"5.0","toefl_estimate":"38-46","evidence":"...","focus":"...","errors":[...]}'`. `errors` lists every failed grammar and vocabulary item in the sample error format from `shared/data-contract.md`, with `topic` set to the syllabus topic it tests ("third and mixed conditionals"). The planner and the first grammar lessons read them.
    - `study set level_overall B1`, and the same for each `level_<skill>`; `study set level_status provisional`.
    - One sample per production answer (`study log sample`), so error rates start from day one.
+   - One vocabulary card per word gap the test showed and per good new word the learner used, with `"source":"assessment"` (card format in the `english-vocab` skill). For a word-family gap, the front is the missing form in a short chunk ("the strength of").
    - `study state assessment_progress=none next_step=plan --expect <rev>`.
    - `study log session '{"skill":"assessment","step":"placement","minutes":<n>}'`, so the test day counts as a study day.
 6. Present the result in the format from `references/scoring.md`. Say it is provisional: the first two weeks of lessons will confirm or adjust it.
