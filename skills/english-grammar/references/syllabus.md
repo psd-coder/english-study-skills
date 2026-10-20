@@ -14,7 +14,7 @@ Each line is one lesson. The tag after the dash links the topic to error data.
 - regular plurals; this, that, these, those - countability
 - there is / there are - wordorder
 - prepositions of place and time (in, on, at) - preposition
-- can for ability and requests - other
+- can for ability and requests - modal
 - present continuous for now - tense
 
 ### A2
@@ -25,7 +25,7 @@ Each line is one lesson. The tag after the dash links the topic to error data.
 - comparatives and superlatives - other
 - adverbs of frequency and manner - wordorder
 - object and possessive pronouns - other
-- have to, must, should - other
+- have to, must, should - modal
 
 ### B1
 - present perfect for experience and unfinished time; for and since - tense
@@ -34,9 +34,9 @@ Each line is one lesson. The tag after the dash links the topic to error data.
 - articles 2: the vs zero article; general statements - article
 - future: will, going to, present continuous - tense
 - first conditional; when/if + present - tense
-- modals of possibility and deduction (may, might, could, must, can't) - other
+- modals of possibility and deduction (may, might, could, must, can't) - modal
 - relative clauses: who, which, that - wordorder
-- gerunds and infinitives 1 (enjoy doing, want to do) - collocation
+- gerunds and infinitives 1 (enjoy doing, want to do) - verbpattern
 - quantifiers: few, little, enough, too - countability
 - questions and embedded questions (where is it / where it is) - wordorder
 - say and tell; make and do - collocation
@@ -49,8 +49,8 @@ Each line is one lesson. The tag after the dash links the topic to error data.
 - the passive in common tenses - tense
 - reported speech and backshift - tense
 - non-defining and reduced relative clauses - wordorder
-- gerunds and infinitives 2 (stop doing / stop to do) - collocation
-- past modals: should have, must have, could have - tense
+- gerunds and infinitives 2 (stop doing / stop to do) - verbpattern
+- past modals: should have, must have, could have - modal
 - articles 3: fixed phrases, place names, abstract nouns - article
 - dependent prepositions (depend on, interested in) - preposition
 
@@ -91,7 +91,8 @@ Read error categories from `study stats` and from recent samples (the `wrong`, `
 | "she go", "they was", "has/have" mixed | present simple agreement | agreement |
 | "Where you work?", "Tell me where is it" | questions and embedded questions | wordorder |
 | informations, advices, less errors | countable and uncountable; quantifiers | countability |
-| "I enjoy to swim", "recommend to do" | gerunds and infinitives | collocation |
+| "I enjoy to swim", "recommend to do", "look forward to meet" | gerunds and infinitives | verbpattern |
+| "shouldn't" for "no need" ("you shouldn't waste time" for "you don't have to"), "must" for advice | have to, must, should | modal |
 | "depend from", "arrive to" | dependent prepositions | preposition |
 | say/tell, make/do mixed | say and tell; make and do | collocation |
 | short, choppy sentences | relative clauses; linking words | wordorder |

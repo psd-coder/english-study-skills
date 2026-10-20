@@ -15,7 +15,7 @@ About 3 minutes. Ask the questions in one or two messages, not one by one.
    - `homework_new` and `homework_review` by time: 15 min: 8 and 3. 30 min: 12 and 4. 45 min or more: 16 and 4.
    - `new_chunks_per_day`: 15 min: 4. 30 min: 6. 45 min or more: 8.
    - `focus`: their focus words, or `none`.
-   - Write the work and life lines under `## Notes` in `profile.md`.
+   - Save the work and life lines with `study note "<line>"`, one call per line.
 5. Speaking setup. Speaking practice needs Handy, a free dictation app that writes down what the learner says. Ask if they want speaking practice. If yes, give these steps:
    - Download Handy from `https://handy.computer` and open it.
    - In Settings, choose the model **Parakeet V3**.

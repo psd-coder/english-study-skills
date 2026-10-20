@@ -30,6 +30,8 @@ CATEGORIES = [
     "spelling",
     "capitalization",
     "vocabulary",
+    "modal",
+    "verbpattern",
     "other",
 ]
 L1_CUE_SHARE = {"A1": 50, "A2": 50, "B1": 30, "B2": 15, "C1": 5, "C2": 0}
@@ -227,6 +229,18 @@ def write_field(path, section, key, value):
     path.write_text("\n".join(lines) + "\n")
 
 
+def append_note(path, text):
+    lines = path.read_text().splitlines()
+    start = next((i for i, line in enumerate(lines) if line.strip().lower() == "## notes"), None)
+    if start is None:
+        fail(f"Section '## Notes' not found in {path.name}")
+    end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
+    while end > start + 1 and not lines[end - 1].strip():
+        end -= 1
+    lines.insert(end, text)
+    path.write_text("\n".join(lines) + "\n")
+
+
 def settings(data_dir):
     return read_fields(data_dir / "profile.md", "settings")
 
@@ -321,6 +335,16 @@ def cmd_set(args):
         )
     write_field(data_dir / "profile.md", "settings", args.key, args.value)
     print(json.dumps({"set": {args.key: args.value}}))
+
+
+def cmd_note(args):
+    data_dir = resolve_dir(args.dir)
+    require_dir(data_dir)
+    text = " ".join(args.text.split())
+    if not text:
+        fail("Note text is empty")
+    append_note(data_dir / "profile.md", text)
+    print(json.dumps({"noted": text}, ensure_ascii=False))
 
 
 def cmd_state(args):
@@ -866,6 +890,10 @@ def build_parser():
     p.add_argument("key")
     p.add_argument("value")
     p.set_defaults(func=cmd_set)
+
+    p = sub.add_parser("note", help="add a line to ## Notes in profile.md")
+    p.add_argument("text")
+    p.set_defaults(func=cmd_note)
 
     p = sub.add_parser("state", help="update state.md fields: key=value ...")
     p.add_argument("pairs", nargs="+")

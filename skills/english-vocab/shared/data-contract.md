@@ -2,7 +2,13 @@
 
 All learner data lives in one study folder. The default is `~/.english-study`; setup may move it. Every skill reaches it through `study.py`, which sits next to this file in the skill's `shared/` folder.
 
-In the skills, `study` means: `python3 "<this skill's folder>/shared/study.py"`. If Python is missing, read and write the files directly by the same rules, and do the date math carefully by hand.
+In the skills, `study` is this shell function. Define it at the start of every shell command that calls it, with the real path of this skill's folder:
+
+```
+study() { python3 "<this skill's folder>/shared/study.py" "$@"; }
+```
+
+If Python is missing, read and write the files directly by the same rules, and do the date math carefully by hand.
 
 ## Start of every run
 
@@ -12,7 +18,7 @@ Run `study status`. It returns the folder path, all settings, the state fields, 
 
 | File | Who writes it | What it holds |
 |---|---|---|
-| `profile.md` | `study set`, or the learner by hand | `## Settings` (one `key: value` per line), `## Preferences` (free text rules from the learner), `## Notes` |
+| `profile.md` | `study set`, `study note`, or the learner by hand | `## Settings` (one `key: value` per line), `## Preferences` (free text rules from the learner), `## Notes` |
 | `state.md` | `study state` | `## Fields`: `rev`, `updated`, `next_step`, `open_homework`, `homework_date`, `unanswered_runs`, `paused`, `assessment_progress`, `week_planned` |
 | `plan.md` | english-planner | roadmap, current block, `## This week` |
 | `homework/<date>-<slug>.md` | the skill that sets homework | the rules recap, the items, and a `## Key` section |
@@ -24,7 +30,7 @@ Run `study status`. It returns the folder path, all settings, the state fields, 
 | `streams.json` | `study import-stream` | connected error streams and how far each was read |
 | `progress.html` | `study dashboard` | the progress page |
 
-Write the markdown files through `study set` and `study state` when a command exists for the change. Both commands accept only the keys listed in this file. Edit `plan.md`, homework files and the free-text sections of `profile.md` directly.
+Write the markdown files through `study set` and `study state` when a command exists for the change. Both commands accept only the keys listed in this file. Add a line to `## Notes` in `profile.md` with `study note "<text>"`. Edit `plan.md`, homework files and `## Preferences` directly.
 
 State fields:
 
@@ -76,7 +82,7 @@ study log sample '{"source":"writing","words":143,"errors":[{"category":"article
 
 `words` is the word count of the learner's own text. It is the denominator of the error rate, so count it for every sample, including clean ones (`"errors": []`). Gap-fill items are not samples; they go into the session score.
 
-Categories: `article`, `tense`, `preposition`, `wordorder`, `agreement`, `collocation`, `phrasal`, `countability`, `spelling`, `capitalization`, `vocabulary`, `other`. `topic` is optional and names the grammar topic tag from the syllabus.
+Categories: `article`, `tense`, `preposition`, `wordorder`, `agreement`, `collocation`, `phrasal`, `countability`, `spelling`, `capitalization`, `vocabulary`, `modal` (can, must, should, have to, past modals), `verbpattern` (gerund or infinitive after a verb: "enjoy doing", "look forward to meeting", "spend time doing"), `other`. `topic` is optional and names the grammar topic from the syllabus.
 
 ## Sessions
 

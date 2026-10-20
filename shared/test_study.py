@@ -98,6 +98,17 @@ class InitAndSettingsTest(StudyTestCase):
             study.main(["set", "Preferences", "use IT examples"])
         self.assertNotIn("Preferences:", (self.dir / "profile.md").read_text())
 
+    def test_note_appends_to_notes_section(self):
+        self.run_cli("note", "Software developer.")
+        self.run_cli("note", "Likes  climbing.\n")
+        profile = (self.dir / "profile.md").read_text()
+        self.assertTrue(profile.endswith("## Notes\nSoftware developer.\nLikes climbing.\n"))
+        self.assertEqual(study.settings(self.dir)["name"], "Ann")
+
+    def test_note_rejects_empty_text(self):
+        with self.assertRaises(SystemExit), contextlib.redirect_stdout(io.StringIO()):
+            study.main(["note", "  "])
+
     def test_l1_cue_share_follows_level_unless_fixed(self):
         self.assertEqual(study.l1_cue_share({"level_overall": "B2-low"}), 15)
         self.assertEqual(study.l1_cue_share({"level_vocabulary": "A2", "level_overall": "B1"}), 50)
@@ -197,6 +208,11 @@ class LogAndStatsTest(StudyTestCase):
         )["row"]
         self.assertEqual(row["errors"][0]["category"], "other")
         self.assertEqual(row["date"], "2026-10-12")
+
+    def test_sample_keeps_modal_and_verbpattern(self):
+        errors = [{"category": "modal"}, {"category": "verbpattern"}]
+        row = self.run_cli("log", "sample", json.dumps({"words": 30, "errors": errors}))["row"]
+        self.assertEqual([e["category"] for e in row["errors"]], ["modal", "verbpattern"])
 
     def test_stats_rates_and_streak(self):
         for day in ["2026-10-08", "2026-10-09", "2026-10-12"]:
