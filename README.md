@@ -11,16 +11,16 @@ The skills install together as one plugin, `english-study`. They share one `stud
 In Claude Code:
 
 ```sh
-claude plugin marketplace add psdcoder/english-study-skills
+claude plugin marketplace add psd-coder/english-study-skills
 claude plugin install english-study@english-study-skills
 ```
 
-In the Code tab of Claude Desktop, open **+**, then **Add plugins**, add the marketplace `psdcoder/english-study-skills` and install `english-study`.
+In the Code tab of Claude Desktop, open **+**, then **Add plugins**, add the marketplace `psd-coder/english-study-skills` and install `english-study`.
 
 In Codex:
 
 ```sh
-codex plugin marketplace add psdcoder/english-study-skills
+codex plugin marketplace add psd-coder/english-study-skills
 codex plugin add english-study@english-study-skills
 ```
 
