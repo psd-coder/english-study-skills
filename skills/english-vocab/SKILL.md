@@ -44,7 +44,7 @@ For each item: check `study cards --find <word>` for a card with the same core w
 3. **Introduce each chunk in context**: a 2 to 6 line dialogue from the learner's world where the chunk appears, then the meaning, 2 to 3 more examples in different situations, a near-synonym contrast when useful ("reckon" vs "think"), the word family, the register, and the trap. Use the learner's first language only for a one-line gloss when the meaning stays unclear.
 4. **Production practice**: for each chunk, one task where the learner must produce it: answer a question with it, finish a sentence, a short role-play line, or use two new chunks in one sentence. Correct each answer. In a scheduled run, send these tasks as homework: save them to `homework/<date>-chunks.md` and run `study state open_homework=vocab:homework/<file> homework_date=<today> --expect <rev>`.
 5. **Save**: add every new chunk as a card. A chunk the learner already produced correctly here gets `study card-grade <id>+ --cue free`.
-6. Log the session and run `study dashboard`. End with what to look out for: "Try to use 'reckon' in a real message this week."
+6. Log the session and run `study dashboard`. End with what to look out for ("Try to use 'reckon' in a real message this week."), then the next-step line from `shared/rules.md`.
 
 ## Review
 

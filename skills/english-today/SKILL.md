@@ -19,7 +19,7 @@ Run `study status`. Note whether this is a **scheduled run** (the prompt says so
 1. `"initialized": false`, or `assessed` is false: hand off to `english-assessment`.
 2. `assessment_progress` is not `none`: hand off to `english-assessment` to continue the test.
 3. `paused` is `yes`:
-   - Scheduled run: end with the single line "English study is paused. Say resume when you are ready."
+   - Scheduled run: end with the paused line from "Missed days" in `shared/rules.md`.
    - Chat: the learner is back. Run `study state paused=no unanswered_runs=0` and do **Re-entry** (below).
 4. The learner's message contains answers to the open homework: hand off to the skill named in `open_homework` (for example `grammar:homework/2026-10-12-articles-2.md`) to grade it.
 
@@ -47,7 +47,7 @@ After a pause, or in a chat after a gap of 4 or more days with no scheduled runs
 1. Welcome the learner back in one line.
 2. Review: `english-vocab` Review mode, capped at 8 chunks and 1 grammar topic.
 3. A two-line recap of the last grammar topic.
-4. End: "Say 'next' and we continue with <the next step>." Missed slots are dropped.
+4. End with the next-step line from `shared/rules.md`, naming the next step: "Send `/english-today` and we continue with <the next step>." Missed slots are dropped.
 
 ## Handing off
 
@@ -55,4 +55,4 @@ To hand off, load the named skill the way your app loads skills; if it is not lo
 
 ## End of the step
 
-The receiving skill logs the session and refreshes the dashboard. Before the turn ends, check that `study state` holds the next step and any open homework, and that the last line of your message tells the learner exactly what to do next.
+The receiving skill logs the session and refreshes the dashboard. Before the turn ends, check that `study state` holds the next step and any open homework, and that your message ends with the next-step line from `shared/rules.md`.

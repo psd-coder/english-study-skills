@@ -55,4 +55,4 @@ The learner speaks into Handy, a free dictation app, with the Parakeet V3 model.
 
 ## Running it on a schedule
 
-Scheduled runs work in Claude Desktop (Code tab), Cowork and the Codex app while the app is open, and through cron with `claude -p` or `codex exec`. Without a schedule, the learner says "next lesson" in any chat, and the agent works out what is due.
+Scheduled runs work in Claude Desktop (Code tab), Cowork and the Codex app while the app is open, and through cron with `claude -p` or `codex exec`. Without a schedule, the learner calls `english-today` by name in any chat (`/english-today` in Claude Code), and the agent works out what is due from the study folder.

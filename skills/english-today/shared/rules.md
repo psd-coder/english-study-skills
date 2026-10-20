@@ -4,7 +4,17 @@ These rules hold in every skill. Learner preferences in `profile.md` override th
 
 ## One step per turn
 
-A run does the one step that is due and ends there, with the next action stated in one line. Grading homework is a full step: the turn ends with the results and the offer of the next lesson. The next lesson starts in the learner's next message or the next scheduled run.
+A run does the one step that is due and ends there, with the next-step line. Grading homework is a full step: the turn ends with the results and the next-step line. The next lesson starts when the learner calls it or at the next scheduled run.
+
+## The next-step line
+
+The last line of every message that waits for the learner tells them the explicit call that continues their study. A new chat starts with no memory, so the learner calls the skill by name and the skill reads the study folder. Use the form for the app you run in:
+
+- Claude Code, or the Code tab of Claude Desktop: `/english-today`
+- Codex: `$english-today`
+- Any other app: "Use the english-today skill"
+
+Examples: "When you are ready, send `/english-today` with your answers, in this chat or a new one." "Send `/english-today` for the next lesson."
 
 ## The chat holds the lesson
 
@@ -35,9 +45,9 @@ Explain in simple English one level below the learner's level. Add a one-line gl
 The state field `unanswered_runs` counts scheduled runs that found open homework with no answer. Each such run first adds one to it, then acts on the new value:
 
 - 1 or 2: a short, warm reminder that repeats the open homework with its rules recap.
-- 3: one message that says the study is paused and that "resume" brings it back. Set `paused=yes`.
-- While `paused=yes`, a scheduled run ends with the single line "English study is paused. Say resume when you are ready."
-- When the learner comes back (any message, an answer, or "resume"): set `paused=no` and `unanswered_runs=0`, and run the re-entry step from `english-today`. Missed lessons are dropped, so the learner never faces a backlog. Homework older than 7 days closes on its own.
+- 3: one message that says the study is paused and that the next-step call brings it back. Set `paused=yes`.
+- While `paused=yes`, a scheduled run ends with the single line "English study is paused. Send `/english-today` when you are ready." (the call for your app).
+- When the learner comes back (the call, an answer, or "resume"): set `paused=no` and `unanswered_runs=0`, and run the re-entry step from `english-today`. Missed lessons are dropped, so the learner never faces a backlog. Homework older than 7 days closes on its own.
 
 ## Level claims
 

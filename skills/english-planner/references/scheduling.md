@@ -50,4 +50,4 @@ For Codex CLI, replace `claude -p "<prompt>"` with `codex exec -s workspace-writ
 
 ## Manual use
 
-Without a schedule the learner says "next lesson" or "let's study" in any chat; `english-today` works out what is due. Tell every learner this works, even with a schedule.
+Without a schedule the learner starts each lesson with the next-step call from `shared/rules.md`; `english-today` works out what is due. Tell every learner this works, even with a schedule.

@@ -31,4 +31,4 @@ Pick the mode from today's slot in `plan.md` or from the learner's request, then
    - Every listening or reading source with `study log episode`.
    - The session with its score: `study log session '{"skill":"practice","step":"<mode>",...}'`.
 6. If the mode left a task open (a rewrite, a speaking retry), record it: `study state open_homework=practice:<mode>:<short note> homework_date=<today> next_step=grade --expect <rev>`. Grading it later is one step; close it with `open_homework=none homework_date=none unanswered_runs=0 paused=no`.
-7. Run `study dashboard`, and end with the next action.
+7. Run `study dashboard`, and end with the next-step line from `shared/rules.md`.

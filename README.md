@@ -34,10 +34,9 @@ The skills need Python 3.8 or newer for `study.py`. macOS and most Linux systems
 
 Open a chat in your agent and say "I want to study English with a plan". Setup takes 3 minutes and the placement test about 20. Then the agent builds your program and offers to set up a daily schedule.
 
-After that, say "next lesson" whenever you want to study, or let the schedule start the lessons. Other useful phrases:
+After that, start each lesson with an explicit call to the `english-today` skill, or let the schedule start the lessons. In Claude Code and the Code tab of Claude Desktop, send `/english-today`. In Codex, send `$english-today`. In other apps, write "Use the english-today skill". Send your homework answers the same way, after the call, in the same chat or a new one. The skill reads your study folder, so a new chat knows where you stopped. Other useful phrases:
 
 - "add 'reckon' to my words"
-- "check my homework: ..."
 - "show my progress"
 - "make homework 16 plus 4" or "no lessons on Friday"
 - "explain the present perfect"

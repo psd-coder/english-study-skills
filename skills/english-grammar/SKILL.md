@@ -24,7 +24,7 @@ Modes:
 4. **Show it in use**: 4 to 6 examples from the learner's world (their work and life from `## Notes`), a short dialogue, and one contrast pair with the form they confuse it with. Then real speech: contractions, common chunks, register, and the trap from the L1 file.
 5. **Quick check**: 3 items in the chat, answered right now, to catch misunderstanding before the homework. In a scheduled run, these become the first 3 homework items.
 6. **Homework**: `homework_new` new items plus `homework_review` items from earlier topics (due grammar cards first, then recent weak topics). Follow "Homework items" in `shared/rules.md`. Save it to `homework/<date>-<topic-slug>.md` with a short rules recap at the top and a `## Key` section at the end, then run `study state open_homework=grammar:homework/<file> homework_date=<today> next_step=grade --expect <rev>`.
-7. Send the lesson: explanation, examples, the quick check, and the full homework in the chat. End with "Send your answers when you are ready, in this chat or a new one."
+7. Send the lesson: explanation, examples, the quick check, and the full homework in the chat. End with the next-step line from `shared/rules.md`, asking for the answers.
 8. `study log session '{"skill":"grammar","step":"teach","topic":"...","minutes":...}'`, then `study dashboard`.
 
 ## Grade
@@ -38,4 +38,4 @@ Modes:
 4. Log one sample with the free-production answers and their errors (`study log sample`, with `words` counted). Log the session with the score.
 5. If a mistake was really a missing word, add it with `english-vocab` quick-add (source "mistake").
 6. `study state open_homework=none homework_date=none next_step=lesson unanswered_runs=0 paused=no --expect <rev>`, then `study dashboard`.
-7. End the turn: the results, what to remember, and "Say 'next lesson' when you want to continue." The next lesson waits for the learner's next message or the next scheduled run.
+7. End the turn: the results, what to remember, and the next-step line from `shared/rules.md`. The next lesson waits for the learner's next message or the next scheduled run.
