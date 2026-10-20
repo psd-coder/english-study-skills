@@ -22,10 +22,13 @@ Follow `references/planning.md`:
 
 1. Feasibility check: hours needed against hours available, with an honest verdict, and a re-scoped goal when the verdict is "not realistic". Save the goal you plan for: `study set goal "<goal>"`.
 2. Strand weights: start from 25% each for input, output, language and fluency. Move up to 10 points toward the learner's `focus` and up to 10 points toward the weakest sub-skill. Save them with `study set weight_<strand> <n>`; the four always sum to 100.
-3. Roadmap: 6-week blocks, each ending with a checkpoint. Name what the learner will be able to do at the end of each block, in their goal's terms.
-4. Write `plan.md` (format in `references/planning.md`). Every program, the first and every re-plan, starts its own week count: set `plan_start` to the Monday of the current week, `next_checkpoint` to `plan_start` plus `checkpoint_weeks` weeks, run `study state week_planned=0 next_step=lesson --expect <rev>`, and run **Week** for week 1. When the program starts on a Thursday or later, week 1 holds only the remaining days.
+3. Roadmap: 6-week blocks, each ending with a checkpoint. Name what the learner will be able to do at the end of each block, in their goal's terms. Block 1 starts with the topics behind the `errors` of the latest assessment, those in the learner's `focus` first, in the order of the dependency chains in the `english-grammar` skill's `references/syllabus.md`.
+4. Write `plan.md` (format in `references/planning.md`). Every program, the first and every re-plan, starts its own week count: set `plan_start` to the Monday of the current week, `next_checkpoint` to `plan_start` plus `checkpoint_weeks` weeks, run `study state week_planned=0 next_step=lesson --expect <rev>`, and run **Week** for week 1. Week 1 holds only the days from today on: its first slot is today when today is a study day, so the learner can start the first lesson at once.
 5. Run **Schedule** if the `schedule` setting is `none`. If the learner prefers to start lessons by hand, set `schedule manual` and do not offer it again.
-6. Show the learner the roadmap, week 1 and the schedule steps in one message. End with the first step: "Your first lesson is ready. Say 'start' or wait for the schedule."
+6. Show the learner the roadmap, week 1 and the schedule question or steps in one message. The last line names the first step:
+   - Schedule question still open: "Answer the schedule question, or say 'start' to begin your first lesson now."
+   - Schedule set: "Your first lesson is ready. Say 'start' now, or it arrives on <day> at <time>."
+   - `schedule` is `manual`: "Your first lesson is ready. Say 'start' when you want it."
 
 ## Week
 
@@ -39,4 +42,4 @@ Silent bookkeeping that runs before the day's step; the learner sees one or two 
 
 ## Schedule
 
-Follow `references/scheduling.md` for the learner's app. Ask before you create anything. Always print the ready-to-paste prompt and the click-by-click steps, even when you also create the task with a tool. Save `study set schedule "<app> <days> <time>"` when it is done.
+Follow `references/scheduling.md` for the app you are running in. Ask before you create anything. Always print the ready-to-paste prompt and the click-by-click steps, even when you also create the task with a tool. Save `study set schedule "<app> <days> <time>"` when it is done.

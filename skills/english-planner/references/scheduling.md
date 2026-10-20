@@ -8,6 +8,16 @@ This is a scheduled run of my English study. Use the english-today skill: run `s
 
 Scheduled runs need the computer on and the app open. A run that was missed while the computer slept runs once when the app opens again (Claude Desktop) or is skipped.
 
+## Which app
+
+Offer the schedule for the app the learner runs you in:
+
+- Claude Desktop: **Claude Desktop** below.
+- The Codex app: **Codex app** below.
+- Claude Code or Codex CLI in a terminal: **cron or launchd** below.
+
+When you are clearly in the Codex app, use that. Otherwise ask: "Are you in the Claude Desktop app, or in a terminal?" A session-only cron tool or a cloud routine cannot run the lesson: the first stops with the session, the second cannot read the study folder. Then ask one question, for example: "I can set up a lesson that arrives on its own, <days>, in Claude Desktop. At what time? If you prefer to start every lesson yourself, say 'manual'."
+
 ## Claude Desktop
 
 Scheduled tasks run locally in the Code tab and can read the study folder.
