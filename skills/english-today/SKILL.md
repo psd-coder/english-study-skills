@@ -1,5 +1,5 @@
 ---
-name: today
+name: english-today
 description: Daily English lesson. Use when a scheduled English study run starts, or the learner says "next lesson", "let's study English", "resume", or sends answers to English homework.
 license: MIT
 ---
@@ -47,7 +47,7 @@ After a pause, or in a chat after a gap of 4 or more days with no scheduled runs
 1. Welcome the learner back in one line.
 2. Review: `vocab` Review mode, capped at 8 chunks and 1 grammar topic.
 3. A two-line recap of the last grammar topic.
-4. End with the next-step line from `../../shared/rules.md`, naming the next step: "Send `/english-study:today` and we continue with <the next step>." Missed slots are dropped.
+4. End with the next-step line from `../../shared/rules.md`, naming the next step: "Send `/english-study:english-today` and we continue with <the next step>." Missed slots are dropped.
 
 ## Handing off
 

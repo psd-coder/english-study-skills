@@ -1,5 +1,5 @@
 ---
-name: progress
+name: english-progress
 description: English study progress report and dashboard. Use when the learner asks how they are doing, wants to see their progress, stats, streak or level, or asks what improved.
 license: MIT
 ---

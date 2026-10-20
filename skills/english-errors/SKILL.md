@@ -1,5 +1,5 @@
 ---
-name: errors
+name: english-errors
 description: Connect an English error stream to the study plan. Use when the learner wants to import mistakes from another tool (a writing checker, an English coach hook, a log of corrected messages), connect such a log, or refresh imported errors. For advanced users.
 license: MIT
 ---

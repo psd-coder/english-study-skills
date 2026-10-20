@@ -1,5 +1,5 @@
 ---
-name: assessment
+name: english-assessment
 description: English level test and study setup. Use when the learner wants to start learning English with a plan, find out their level, take a placement test, or when a 6-week checkpoint or a level confirmation is due.
 license: MIT
 ---

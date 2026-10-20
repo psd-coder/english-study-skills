@@ -3,7 +3,7 @@
 Every scheduled run uses the same prompt. Replace `<days>` and `<time>`:
 
 ```
-This is a scheduled run of my English study. Use the english-study:today skill: run `study status`, do the one step that is due, and end. The learner is not here right now, so the message you write is the lesson: make it complete, with every exercise in the chat.
+This is a scheduled run of my English study. Use the english-study:english-today skill: run `study status`, do the one step that is due, and end. The learner is not here right now, so the message you write is the lesson: make it complete, with every exercise in the chat.
 ```
 
 Scheduled runs need the computer on and the app open. A run that was missed while the computer slept runs once when the app opens again (Claude Desktop) or is skipped.

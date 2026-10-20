@@ -30,9 +30,9 @@ The skills need Python 3.8 or newer for `study.py`. macOS and most Linux systems
 
 Every skill is called by its full name, with the plugin name in front. In Claude Code and the Code tab of Claude Desktop, a call starts with `/`. In Codex, it starts with `$`.
 
-To begin, send `/english-study:assessment` in Claude Code or `$english-study:assessment` in Codex. Setup takes 3 minutes and the placement test about 20. Then the agent builds your program and offers to set up a daily schedule.
+To begin, send `/english-study:english-assessment` in Claude Code or `$english-study:english-assessment` in Codex. Setup takes 3 minutes and the placement test about 20. Then the agent builds your program and offers to set up a daily schedule.
 
-After that, start each lesson with `/english-study:today`, or let the schedule start the lessons. Send your homework answers after the same call, in the same chat or a new one. The skill reads your study folder, so a new chat knows where you stopped. Other useful phrases:
+After that, start each lesson with `/english-study:english-today`, or let the schedule start the lessons. Send your homework answers after the same call, in the same chat or a new one. The skill reads your study folder, so a new chat knows where you stopped. Other useful phrases:
 
 - "add 'reckon' to my words"
 - "show my progress"
@@ -63,7 +63,7 @@ Speaking feedback needs [Handy](https://handy.computer), a free dictation app. I
 | Claude Desktop, Code tab | yes | runs locally while the app is open |
 | Claude Cowork | yes | runs in the cloud; reaches the study folder only while the app is open |
 | Codex app | yes | runs locally while the app is open |
-| Claude Code, Codex CLI | with cron | see `skills/planner/references/scheduling.md` |
+| Claude Code, Codex CLI | with cron | see `skills/english-planner/references/scheduling.md` |
 | Claude Code `/schedule` | no | runs in the cloud without your files |
 
 ## Development

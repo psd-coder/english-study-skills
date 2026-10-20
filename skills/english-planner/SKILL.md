@@ -1,5 +1,5 @@
 ---
-name: planner
+name: english-planner
 description: English study program and weekly plan. Use after an English assessment or checkpoint, at the start of each study week, when the learner wants to change goal, focus or schedule, or wants lessons to run automatically on a schedule.
 license: MIT
 ---
@@ -26,9 +26,9 @@ Follow `references/planning.md`:
 4. Write `plan.md` (format in `references/planning.md`). Every program, the first and every re-plan, starts its own week count: set `plan_start` to the Monday of the current week, `next_checkpoint` to `plan_start` plus `checkpoint_weeks` weeks, run `study state week_planned=0 next_step=lesson --expect <rev>`, and run **Week** for week 1. Week 1 holds only the days from today on: its first slot is today when today is a study day, so the learner can start the first lesson at once.
 5. Run **Schedule** if the `schedule` setting is `none`. If the learner prefers to start lessons by hand, set `schedule manual` and do not offer it again.
 6. Show the learner the roadmap, week 1 and the schedule question or steps in one message. The last line is the next-step line from `../../shared/rules.md`, naming the first lesson:
-   - Schedule question still open: "Answer the schedule question, or send `/english-study:today` to begin your first lesson now."
-   - Schedule set: "Your first lesson is ready. Send `/english-study:today` now, or it arrives on <day> at <time>."
-   - `schedule` is `manual`: "Your first lesson is ready. Send `/english-study:today` when you want it."
+   - Schedule question still open: "Answer the schedule question, or send `/english-study:english-today` to begin your first lesson now."
+   - Schedule set: "Your first lesson is ready. Send `/english-study:english-today` now, or it arrives on <day> at <time>."
+   - `schedule` is `manual`: "Your first lesson is ready. Send `/english-study:english-today` when you want it."
 
 ## Week
 

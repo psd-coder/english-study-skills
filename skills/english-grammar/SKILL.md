@@ -1,5 +1,5 @@
 ---
-name: grammar
+name: english-grammar
 description: English grammar lessons with homework. Use when the learner wants a grammar lesson, an explanation of a grammar topic (present perfect, articles, conditionals), grammar homework, or homework checked.
 license: MIT
 ---

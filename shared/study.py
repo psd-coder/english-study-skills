@@ -165,7 +165,7 @@ def fail(message):
 
 def require_dir(data_dir):
     if not (data_dir / "profile.md").exists():
-        fail(f"No study folder at {data_dir}. Run the english-study:assessment skill to set it up.")
+        fail(f"No study folder at {data_dir}. Run the english-assessment skill to set it up.")
 
 
 def read_jsonl(data_dir, name):

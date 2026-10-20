@@ -1,5 +1,5 @@
 ---
-name: practice
+name: english-practice
 description: English listening, reading, writing and speaking practice. Use when the learner wants to practise listening to real English, read a text, write something and get it corrected, practise speaking, or do a fluency or shadowing exercise.
 license: MIT
 ---

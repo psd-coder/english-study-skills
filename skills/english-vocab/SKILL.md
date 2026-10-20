@@ -1,5 +1,5 @@
 ---
-name: vocab
+name: english-vocab
 description: English vocabulary with spaced review. Use when the learner wants to add a word or phrase to learn, review their words, learn new words or collocations on a topic, or asks how a word is used or pronounced.
 license: MIT
 ---
